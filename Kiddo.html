@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background-color: #800080;
+  overflow: hidden;
+  background: url('our video.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  display: block;
+  z-index: 10;
+}
+
+.popup button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  background: #FFD700;
+  color: black;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.message-box {
+  position: relative;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+h1 {
+  font-size: 50px;
+  color: #200616;
+}
+
+p {
+  font-size: 25px;
+  color: #FFF;
+}
+
+#personal-message {
+  font-size: 22px;
+  color: #2b0227;
+  font-style: italic;
+}
+
+.heart {
+  position: absolute;
+  color: red;
+  font-size: 30px;
+  animation: floatUp 3s infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { transform: translateY(-100px); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="popup" id="popup">
+  <h2>SURPRISE SECRET MESSAGE ! 🎁</h2>
+  <button onclick="openMessage()">ClIcK mE (LOVE💖)</button>
+</div>
+
+<div class="message-box" id="message-box">
+  <h1>FIRSTTT OFF ALL HAPPPPYYYYY 20th BIRTHDAYYYY, MY BIG KIDDO💋💋💋💋</h1>
+  <p>YAEEEEEEEEEEEEEEEEEEEEEEEEEEEEE🥳🥳🥳🥳🥳🥳🥳! </p>
+  <p id="personal-message">[Today, on this special day want to confess you something that is your laugh effects me positively 🥰, your tears make me feel sad 😭, I feel happy when you are happy😍 that means yes 'I DO LOVE YOU' & today I promise you something I have already started making efforts but still again i will work more to control myself the way you want for OUR FUTURE FOR YOU MY KIDDO DARLING😘😘, a birthday promise & please do remind me this words if I forget it, it's a secret key which I am giving you as a gift🎁 to control me or my anger☠️]</p>
+</div>
+
+<script>
+function openMessage() {
+  document.getElementById("popup").style.display = "none";
+  document.getElementById("message-box").style.display = "block";
+}
+
+function createHeart() {
+  let heart = document.createElement("div");
+  heart.innerHTML = "❤️";
+  heart.className = "heart";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.top = "100vh";
+  document.body.appendChild(heart);
+  setTimeout(() => { heart.remove(); }, 3000);
+}
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
